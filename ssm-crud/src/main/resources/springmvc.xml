@@ -25,6 +25,7 @@
     </bean>
 
 
+
     <!-- 两个标配  -->
     <!--    将SpringMVC不能处理的请求交给Tomcat-->
     <mvc:default-servlet-handler/>

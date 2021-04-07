@@ -124,6 +124,15 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
+
+    <!-- 日志输出包 mybatis使用log4j输出sql语句 -->
+<!-- <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+-->
+
   </dependencies>
 
   <build>

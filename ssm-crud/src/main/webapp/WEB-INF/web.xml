@@ -12,6 +12,10 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+  <context-param>
+    <param-name/>
+    <param-value/>
+  </context-param>
 
   <!--配置Spring的监听器，默认只加载WEB-INF目录下的applicationContext.xml配置文件-->
   <listener>
