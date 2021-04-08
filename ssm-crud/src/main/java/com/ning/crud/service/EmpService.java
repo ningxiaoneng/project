@@ -15,7 +15,6 @@ public class EmpService {
 
     //查询所有的员工
     public List<Emp> getAll() {
-
         return empMapper.selectByExampleWithDept(null);
     }
 }

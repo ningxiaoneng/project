@@ -58,12 +58,14 @@
                         <th>deptName</th>
                         <th>操作</th>
                     </tr>
+
+                    <c:forEach items="${pageInfo.list}" var="emp">
                     <tr>
-                        <th>1</th>
-                        <th>222</th>
-                        <th>南</th>
-                        <th>16977@qq.com</th>
-                        <th>aaaaa</th>
+                        <th>${emp.empId}</th>
+                        <th>${emp.empName}</th>
+                        <th>${emp.sex=="G"?"女":"男"}</th>
+                        <th>${emp.email}</th>
+                        <th>${emp.dept.deptName}</th>
                         <th>
                             <button class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -75,6 +77,8 @@
                             </button>
                         </th>
                     </tr>
+
+                    </c:forEach>
                 </table>
             </div>
 
@@ -84,29 +88,42 @@
         <div class="row">
             <%--分页文字信息--%>
             <div class="col-md-6">
-                当前记录数：xx
+                当前${pageInfo.pageNum}页，总共${pageInfo.pages}页，总${pageInfo.total}条共记录
             </div>
             <%--分页按钮信息--%>
             <div class="col-md-6">
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
-                        <li><a href="#">首页</a></li>
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                        <li><a href="#">末页</a></li>
+
+                        <li><a href="${APP_PATH }/emps/list?pn=1">首页</a></li>
+
+                        <c:if test="${pageInfo.hasPreviousPage}">
+                            <li>
+                                <a href="${APP_PATH}/emps/list?pn=${pageInfo.pageNum-1}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
+
+                        <c:forEach items="${pageInfo.navigatepageNums }" var="page_Num">
+                            <c:if test="${page_Num == pageInfo.pageNum }">
+                                <li class="active"><a href="#">${page_Num }</a></li>
+                            </c:if>
+                            <c:if test="${page_Num != pageInfo.pageNum }">
+                                <li><a href="${APP_PATH }/emps/list?pn=${page_Num }">${page_Num }</a></li>
+                            </c:if>
+                        </c:forEach>
+
+                        <c:if test="${pageInfo.hasNextPage}">
+                            <li>
+                                <a href="${APP_PATH}/emps/list?pn=${pageInfo.pageNum+1}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
+
+                        <li><a href="${APP_PATH }/emps/list?pn=${pageInfo.pages}">末页</a></li>
+
                     </ul>
                 </nav>
             </div>
