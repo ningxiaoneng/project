@@ -8,13 +8,10 @@
 
   <!--  1、启动Spring容器-->
   <!--设置配置文件的路径-->
+  <!--  1、启动Spring容器-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
-  </context-param>
-  <context-param>
-    <param-name/>
-    <param-value/>
   </context-param>
 
   <!--配置Spring的监听器，默认只加载WEB-INF目录下的applicationContext.xml配置文件-->

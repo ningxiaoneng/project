@@ -13,6 +13,18 @@ public class Emp {
 
     private  Dept dept;
 
+    public Emp() {
+
+    }
+
+    public Emp(Integer empId, String empName, String sex, String email, Integer deptId) {
+        this.empId = empId;
+        this.empName = empName;
+        this.sex = sex;
+        this.email = email;
+        this.deptId = deptId;
+    }
+
     public Dept getDept() {
         return dept;
     }

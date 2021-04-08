@@ -10,6 +10,10 @@
         <package name="com.ning.crud.bean"/>
     </typeAliases>
     
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+    
     
     
 </configuration>

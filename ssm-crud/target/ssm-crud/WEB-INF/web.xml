@@ -8,6 +8,7 @@
 
   <!--  1、启动Spring容器-->
   <!--设置配置文件的路径-->
+  <!--  1、启动Spring容器-->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>

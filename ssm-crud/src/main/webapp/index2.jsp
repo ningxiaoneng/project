@@ -1,0 +1,1 @@
+<jsp:forward page="emps/list"></jsp:forward>
