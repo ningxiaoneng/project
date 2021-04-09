@@ -17,4 +17,9 @@ public class EmpService {
     public List<Emp> getAll() {
         return empMapper.selectByExampleWithDept(null);
     }
+
+    //保存新增员工
+    public void saveEmp(Emp emp) {
+        empMapper.insertSelective(emp);
+    }
 }

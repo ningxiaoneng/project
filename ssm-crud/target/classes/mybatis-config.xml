@@ -9,9 +9,13 @@
     <typeAliases>
         <package name="com.ning.crud.bean"/>
     </typeAliases>
-    
+
+    <!--mybatis分页插件，导入依赖，然后mybatis配置文件配置就可以用-->
     <plugins>
-        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分页参数合理化  -->
+            <property name="reasonable" value="true"/>
+        </plugin>
     </plugins>
     
     
